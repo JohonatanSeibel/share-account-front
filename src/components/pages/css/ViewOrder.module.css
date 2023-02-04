@@ -1,0 +1,61 @@
+.view_order_details {
+    padding: 0em;
+  }
+
+
+.view_order_details h2,
+.view_order_details h1,
+.view_order_details p {
+    margin-bottom: 0.5em;
+  }
+
+  .view_order_details h1 {
+background-color: #222;
+color: #ffbb33;
+padding: 0.4em;
+}
+
+.view_order_details span,
+.view_order_details label {
+font-weight: bold;
+}
+
+.details_container,
+.service_form_container {
+border-bottom: 1px solid #7a7a7a;
+padding-bottom: 1.2em;
+margin-bottom: 1.2em;
+}
+
+.order_card_actions {
+    margin-top: 1.2em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .order_card_actions a,
+  .order_card_actions button {
+    text-decoration: none;
+    border: none;
+    background-color: #fff;
+    color: #222;
+    font-size: 0.9em;
+    padding: 0.6em 1em;
+    margin-right: 1em;
+    cursor: pointer;
+    border: 1px solid #222;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .order_card_actions svg {
+    margin-right: 0.5em;
+  }
+  
+  .order_card_actions a:hover,
+  .order_card_actions button:hover {
+    background-color: #222;
+    color: #ffbb33;
+  }

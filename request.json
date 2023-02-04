@@ -1,0 +1,19 @@
+{
+  "customerInvoices": [
+    {
+      "transactionPostings": [],
+      "id": 1
+    },
+    {
+      "transactionPostings": [],
+      "id": 2
+    },
+    {
+      "transactionPostings": [],
+      "name": "teste",
+      "customerType": "ME",
+      "id": 3
+    }
+  ],
+  "body": []
+}
