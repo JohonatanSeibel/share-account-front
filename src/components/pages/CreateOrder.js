@@ -14,7 +14,6 @@ function CreateOrder(){
     const [removeLoading, setRemoveLoading] = useState(true)
     const[response, setResponse] = useState()
     const[enableButton, setEnableButton] = useState(true)
-
     const [orderMessage, setOrderMessage] = useState()
 
     const submitCustomer = (e) => {
@@ -22,12 +21,6 @@ function CreateOrder(){
         array.push(e)
         setCustomerInvoices({...customerInvoice, customerInvoices: array})
         setEnableButton(false)
-    }
-
-    const handleRemove = (e) => {
-        //console.log(e)
-        let array = customerInvoice.filter(c => c.name !== e)
-        setCustomerInvoices(array)
     }
 
     function submit(){
@@ -53,8 +46,6 @@ function CreateOrder(){
 
     return (
         <div className={styles.create_order_details}>
-            
-            
             <CustomerForm handleSubmit={submitCustomer}
                         orderData={customerInvoice}/>
             {customerInvoice.customerInvoices ? (<div>
@@ -63,8 +54,7 @@ function CreateOrder(){
             <Container customClass="start">
                 {customerInvoice.customerInvoices && customerInvoice.customerInvoices.length > 0  && 
                     customerInvoice.customerInvoices.map((customer) => (
-                        <CustomerCard customer={customer}
-                                    handleRemove={handleRemove}/>
+                        <CustomerCard customer={customer}/>
                     ))}
            
             {orderMessage && <Message type="Success" msg={orderMessage}/>}
@@ -81,10 +71,7 @@ function CreateOrder(){
                 </button>) : ('')}
             </>
             </div>
-        </div>
-        
-        
-        
+        </div>  
     )
 }
 

@@ -1,12 +1,7 @@
 import styles from './TransactionCard.module.css'
-import { BsFillTrashFill} from 'react-icons/bs'
 
-function TransactionCard({transaction, id, handleRemove}){
+function TransactionCard({transaction}){
 
-    const remove = (e) =>{
-        e.preventDefault()
-        handleRemove(id)
-    }
     return(
         <div className={styles.transaction_card}>
         <h4>{transaction.description}</h4>
@@ -25,11 +20,6 @@ function TransactionCard({transaction, id, handleRemove}){
             <p>
                 <span>Value Type: </span> {transaction.valueType}
             </p>) : ('')}
-            <div className={styles.transaction_card_actions}>
-                <button onClick={remove}>
-                    <BsFillTrashFill /> Delete
-                </button>
-            </div>
         </div>
     )
 }

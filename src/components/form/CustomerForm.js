@@ -11,7 +11,6 @@ function CustomerForm({orderData, handleSubmit}){
     const [customer, setCustomer] = useState({})
     const[enableButton, setEnableButton] = useState(true)
     const[disabled, setDisabled] = useState(false)
-    
 
     const customerTypes = [
         {
@@ -51,16 +50,6 @@ function CustomerForm({orderData, handleSubmit}){
         setEnableButton(false)
     }
 
-    const handleRemove = (e) => {
-        // console.log(e)
-        // let array = customer.transactionPostings.filter(t => t.id !== e)
-        // console.log('PASSOU ')
-        // console.log(array)
-        // setCustomer({...customer, transactionPostings: array})
-        // console.log(customer)
-    }
-
-
     return (
         <div>
             <Input type="text" 
@@ -84,17 +73,17 @@ function CustomerForm({orderData, handleSubmit}){
                     <h3>Transactions</h3>
                 </div>) : ('')}
             <Container customClass="start">
-                
                 {customer.transactionPostings && customer.transactionPostings.length > 0  && 
                     customer.transactionPostings.map((transaction) => (
                         <TransactionCard transaction={transaction}
-                                                 id={transaction.id}
-                                    handleRemove={handleRemove}/>
+                                                 id={transaction.id}/>
                     ))
                 }
             </Container>                
             <>
-                {!enableButton ? (<button className={styles.btn} disabled={enableButton} onClick={submit}>Add Customer</button>) : ('')}
+                {!enableButton ? (<button className={styles.btn} 
+                                            disabled={enableButton} 
+                                            onClick={submit}>Add Customer</button>) : ('')}
             </>
             
             

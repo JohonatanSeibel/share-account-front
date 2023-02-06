@@ -4,10 +4,9 @@ import { useState } from 'react'
 import Input from '../form/Input'
 import Select from '../form/Select'
 
-function TransactionForm({handleTransaction, transactionData, customerType}){
+function TransactionForm({handleTransaction, customerType}){
     const [transaction, setTransaction] = useState({})
     const[enableButton, setEnableButton] = useState(true)
-    //const [listTransaction, setListTransaction] = useState(transactionData || [])
 
     const submitTransaction = (e) => {
         e.preventDefault()
@@ -83,7 +82,6 @@ function TransactionForm({handleTransaction, transactionData, customerType}){
                     placeholder="R$"
                     handleOnChange={handleChangeValue} 
                     value={transaction.value ? transaction.value : ''}/>
-                    <>
                     {customerType === 'ESTABLISHMENT'? (
                         <div>
                             <Select text="Transaction Type" 
@@ -105,12 +103,9 @@ function TransactionForm({handleTransaction, transactionData, customerType}){
                                 value={transaction.valueType ? transaction.valueType : ''}/> 
                                 </div>) : ('')
                     }
-                    </>
-                    <>
                     {!enableButton ? (<button className={styles.btn} 
                                             disabled={enableButton} 
                                             onClick={submitTransaction}>Add transaction</button>) : ('')}
-                    </>
             </div>
         </div>
     )

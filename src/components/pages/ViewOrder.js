@@ -5,10 +5,8 @@ import Container from '../layout/Container'
 
 function ViewOrder({orderData}) {
     const [order] = useState(orderData)
-
-    
+ 
     return (
-        
         <>
         {order && order.accountAmount ? (
         <div className={styles.view_order_details}>
@@ -42,7 +40,6 @@ function ViewOrder({orderData}) {
                             </div>
                         ))} 
                     </div>
-                    
                     <div className={styles.order_card_actions}>
                     <button onClick={() => window.location.reload(true)}>Refresh</button>
                 </div>

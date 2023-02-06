@@ -15,8 +15,6 @@ function Input({type, text, name, placeholder, handleOnChange, value, disabled})
                     disabled={disabledInput}/>
         </div>
     )
-
-
 }
 
 export default Input

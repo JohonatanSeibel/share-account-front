@@ -13,7 +13,6 @@ function MyOrders(){
     const [orders, setOrders] = useState([])
     const [removeLoading, setRemoveLoading] = useState(false)
     const [orderMessage, setOrderMessage] = useState('')
-
     const location = useLocation()
     let message = '';
 
@@ -31,19 +30,7 @@ function MyOrders(){
             // console.log(data)
             setOrders(data)
             setRemoveLoading(true)
-        }).catch(err => console.log(err))}, 300)
-
-        // fetch('http://localhost:5000/body', {
-        //     method: 'GET',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        // }).then(resp => resp.json()).then(data => {
-        //     // console.log(data)
-        //     setOrders(data)
-        //     setRemoveLoading(true)
-        // }).catch(err => console.log(err))}
-       
+        }).catch(err => console.log(err))}, 300)       
     }, [])
 
     function removeOrder(id){
