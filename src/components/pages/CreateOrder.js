@@ -26,7 +26,6 @@ function CreateOrder(){
     function submit(){
         setRemoveLoading(false)
         setEnableButton(true)
-        console.log(JSON.stringify(customerInvoice))
         fetch('http://ec2-15-228-82-5.sa-east-1.compute.amazonaws.com:8080/shareAccount', {
         method: 'POST',
         headers:{
@@ -34,14 +33,12 @@ function CreateOrder(){
         },
         body: JSON.stringify(customerInvoice)
         }).then((resp) => resp.json()).then((data) => {
-            console.log(data)
             setOrderMessage(data.message ? '⛔️ ' + data.message : '') 
             setRemoveLoading(true)
             setResponse(data)
+            console.log(response)
             setCustomerInvoices([])
-        }).catch((err) => err.json()).then( (err)=> {
-            console.log(err)
-        })
+        }).catch((err) => err.json()).then( err => console.log(err))
     }
 
     return (
@@ -59,9 +56,8 @@ function CreateOrder(){
            
             {orderMessage && <Message type="Success" msg={orderMessage}/>}
             {!removeLoading && <Loading />}
-            { response ? (
+            { response && 
                 <ViewOrder orderData={response}/>
-                ) : ('')
             }
             </Container>    
             <div className={styles.create_order_card_actions}>  

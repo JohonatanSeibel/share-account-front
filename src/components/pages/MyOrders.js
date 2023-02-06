@@ -27,7 +27,6 @@ function MyOrders(){
                 'Content-Type': 'application/json',
             },
         }).then(resp => resp.json()).then(data => {
-            // console.log(data)
             setOrders(data)
             setRemoveLoading(true)
         }).catch(err => console.log(err))}, 300)       
