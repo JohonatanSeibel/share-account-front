@@ -15,15 +15,15 @@ function CustomerForm({orderData, handleSubmit}){
     const customerTypes = [
         {
             id: "ME",
-            name: "EU"
+            name: "ME"
         },
         {
             id: "FRIEND",
-            name: "AMIGO"
+            name: "FRIEND"
         },
         {
             id: "ESTABLISHMENT",
-            name: "ESTABELECIMENTO"
+            name: "ESTABLISHMENT"
         }
     ]
 

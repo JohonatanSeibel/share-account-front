@@ -5,6 +5,8 @@ Front to ShareAccount
 Divisão de comandas.
 </p>
 
+### [Doc Manual Da Aplicação](https://drive.google.com/file/d/1PLCex8WC08WRwkbF2JMP5Ju4FfvM8z1r/view?usp=sharing) ###
+
 ### :pushpin: Features
 
 - [x] Permite acrescentar a comanda os clientes envolvidos e suas transações
